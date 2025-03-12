@@ -1,0 +1,36 @@
+@import './reset.css';
+@import './fonts.css';
+@import './variables.css';
+
+body {
+  padding: 100px;
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-normal);
+  color: var(--primary-color);
+  background-color: var(--bg-color);
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: var(--font-size-title);
+}
+
+h2 {
+  font-size: var(--font-size-subtitle);
+}
+
+input {
+  font-size: var(--font-size-medium);
+}
+
+button:disabled {
+  background-color: var(--bg-disabled-color);
+  color: var(--inverted-bg-disabled-color);
+  border-color: var(--bg-disabled-color);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 30px 16px;
+  }
+}

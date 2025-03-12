@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Muller';
+  src: url('../assets/fonts/MullerRegular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('../assets/fonts/MullerBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}

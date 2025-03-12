@@ -1,0 +1,23 @@
+.todos {
+  max-width: 1240px;
+  min-height: 320px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.inputMarginBottom {
+  margin-bottom: 67px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    margin-bottom: 17px;
+  }
+  .inputMarginBottom {
+    margin-bottom: 30px
+  }
+}
