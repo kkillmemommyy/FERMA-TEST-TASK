@@ -15,6 +15,10 @@
   margin-left: auto;
 }
 
+.saveBtn {
+  color: #0013ff;
+}
+
 .text {
   overflow: hidden;
   width: 100%;
@@ -23,6 +27,20 @@
 
 .completed {
   text-decoration: line-through;
+}
+
+.input {
+  font-size: inherit;
+  color: #30324b;
+  font-family: inherit;
+  caret-color: #0013ff;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+input:focus {
+  border-bottom: 1px solid #878787;
 }
 
 /* checkbox */
@@ -57,7 +75,7 @@
 
 .checkbox__input:focus-visible + .checkbox__mark {
   background-color: #d9d9d9;
-  border: 1px solid var(--primary-color);
+  border: 1px solid #30324b;
 }
 
 .checkbox__input:hover + .checkbox__mark {

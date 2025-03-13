@@ -1,4 +1,6 @@
 .btn {
+  font-family: inherit;
+  font-size: inherit;
   cursor: pointer;
   background-color: inherit;
   padding: 10px 15px;
@@ -17,16 +19,21 @@
   outline: none;
 }
 
+.none {
+  padding: 0;
+  border: 0;
+}
+
 /* black theme */
 
 .black {
-  border-color: var(--primary-color);
-  color: var(--primary-color);
+  border-color: #30324b;
+  color: #30324b;
 }
 
 .black.active {
-  background-color: var(--primary-color);
-  color: var(--inverted-primary-color);
+  background-color: #30324b;
+  color: #fff;
 }
 
 .black:hover {
@@ -35,7 +42,7 @@
 
 .black:focus-visible {
   border-color: #a4a4a4;
-  background-color: var(--primary-color);
+  background-color: #30324b;
   color: #fff;
 }
 
@@ -86,9 +93,9 @@
 /* disabled */
 
 .btn:disabled {
-  background-color: var(--bg-disabled-color);
-  color: var(--inverted-bg-disabled-color);
-  border-color: var(--bg-disabled-color);
+  background-color: #f2f3f5;
+  color: #dedede;
+  border-color: #f2f3f5;
 }
 
 /* edit and delete */
@@ -104,10 +111,11 @@
 /* edit */
 
 .edit {
-  color: var(--primary-color);
+  color: #30324b;
 }
 
-.edit.active {
+.edit.active,
+.edit.active:hover {
   color: #0013ff;
 }
 

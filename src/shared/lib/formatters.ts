@@ -1,8 +1,8 @@
 // date: Timestamp
-export const getFormattedDate = (date: number) => {
+export const getFormattedDate = (date: string) => {
   const MS_IN_DAY = 86400000;
 
-  const dateObj = new Date(date)
+  const dateObj = new Date(Number(date))
 
   const today = new Date();
   let dayAgo = Math.floor((today.getTime() - dateObj.getTime()) / MS_IN_DAY);

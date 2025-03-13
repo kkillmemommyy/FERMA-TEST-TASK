@@ -1,16 +1,9 @@
 :root {
   --font-family-main: 'Muller', sans-serif;
-
   --font-size-normal: 16px;
   --font-size-medium: 24px;
   --font-size-subtitle: 20px;
   --font-size-title: 96px;
-
-  --bg-color: #fff;
-  --bg-disabled-color: #f2f3f5;
-  --inverted-bg-disabled-color: #dedede;
-  --primary-color: #30324b;
-  --inverted-primary-color: #fff;
 }
 
 @media (max-width: 768px) {

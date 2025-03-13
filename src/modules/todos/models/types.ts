@@ -5,8 +5,8 @@ export type Filter = 'ALL' | 'COMPLETED' | 'IN_WORK';
 export interface Task {
   id: string;
   text: string;
-  createdAt: number;
-  updatedAt: number;
+  createdAt: string;
+  updatedAt: string;
   status: TodoStatus;
 }
 
