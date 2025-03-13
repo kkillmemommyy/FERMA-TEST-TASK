@@ -1,19 +1,16 @@
 # FERMA TEST TASK
 
-## Github pages
+**Github Pages:**
+[https://kkillmemommyy.github.io/FERMA-TEST-TASK/](https://kkillmemommyy.github.io/FERMA-TEST-TASK/)
 
-https://kkillmemommyy.github.io/FERMA-TEST-TASK/
+## Использованные технологии
+- **React**
+- **TypeScript**
+- **Redux Toolkit**
+- **Redux-persist** (для сохранения стейта в local storage)
+- **CSS-modules**
+- **Clsx**
+- **Vite**
 
-## Использованные технологии:
-
-- React
-- TypeScript
-- Redux toolkit
-- Redux-persist (для сохранения стейта в local storage)
-- Css-modules
-- Clsx
-- Vite
-
-# TDOD:
-
-- DND
+## TODO
+- **DND**
