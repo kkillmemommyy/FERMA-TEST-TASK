@@ -1,6 +1,7 @@
 # FERMA TEST TASK
 
 ## Использованные технологии:
+
 - React
 - TypeScript
 - Redux toolkit
