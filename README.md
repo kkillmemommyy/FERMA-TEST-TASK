@@ -1,5 +1,9 @@
 # FERMA TEST TASK
 
+## Github pages
+
+https://kkillmemommyy.github.io/FERMA-TEST-TASK/
+
 ## Использованные технологии:
 
 - React
@@ -9,3 +13,7 @@
 - Css-modules
 - Clsx
 - Vite
+
+# TDOD:
+
+- DND

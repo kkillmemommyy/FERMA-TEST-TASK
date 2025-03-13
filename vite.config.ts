@@ -10,4 +10,5 @@ export default defineConfig({
     },
   },
   appType: 'spa',
+  base: '/FERMA-TEST-TASK/',
 });
