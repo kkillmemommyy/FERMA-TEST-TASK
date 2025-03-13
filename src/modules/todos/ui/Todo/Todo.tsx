@@ -30,7 +30,8 @@ export const Todo = memo(({ id }: TodoProps) => {
   };
 
   const handleSave = () => {
-    if (editText !== '' && editText.trim() !== text) {
+    const isValid = editText.trim() !== '' && editText.trim() !== text;
+    if (isValid) {
       dispatch(todosActions.updateTask({ id, text: editText.trim() }));
     }
     setIsEditing(false);
@@ -56,19 +57,22 @@ export const Todo = memo(({ id }: TodoProps) => {
         />
         <span className={cls.checkbox__mark}></span>
         {isEditing ? (
-          <input
-            onBlur={onBlure}
-            className={cls.input}
-            type='text'
-            contentEditable
-            value={editText}
-            autoFocus
-            onChange={(e) => setEditText(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') handleSave();
-              if (e.key === 'Escape') setIsEditing(false);
-            }}
-          />
+          <div className={cls.inputWrap}>
+            <input
+              onBlur={onBlure}
+              className={cls.input}
+              type='text'
+              contentEditable
+              value={editText}
+              autoFocus
+              onChange={(e) => setEditText(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') handleSave();
+                if (e.key === 'Escape') setIsEditing(false);
+              }}
+            />
+            <span className={cls.InputDynamicUnderline}>{editText}</span>
+          </div>
         ) : (
           <span className={clsx({ [cls.completed]: isCompleted }, cls.text)}>{text}</span>
         )}
