@@ -1,12 +1,143 @@
 .btn {
+  cursor: pointer;
   background-color: inherit;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid;
+  transition: all 0.2s ease-in-out;
 }
+
+@media (max-width: 768px) {
+  .btn {
+    padding: 8px 15px;
+  }
+}
+
+.btn:focus-visible {
+  outline: none;
+}
+
+/* black theme */
 
 .black {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
+
+.black.active {
+  background-color: var(--primary-color);
+  color: var(--inverted-primary-color);
+}
+
+.black:hover {
+  background-color: #575a84;
+}
+
+.black:focus-visible {
+  border-color: #a4a4a4;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* green theme */
 
 .green {
+  border-color: #6ad400;
+  color: #6ad400;
 }
 
+.green.active {
+  background-color: #6ad400;
+  color: #fff;
+}
+
+.green:hover {
+  background-color: #ceff9d;
+}
+
+.green:focus-visible {
+  border-color: #ceff9d;
+  background-color: #6ad400;
+  color: #fff;
+}
+
+/* red theme */
+
 .red {
+  border-color: #ff2f2f;
+  color: #ff2f2f;
+}
+
+.red.active {
+  background-color: #ff2f2f;
+  color: #fff;
+}
+
+.red:hover {
+  background-color: #ffb8b8;
+}
+
+.red:focus-visible {
+  border-color: #ffb8b8;
+  background-color: #ff2f2f;
+  color: #fff;
+}
+
+/* disabled */
+
+.btn:disabled {
+  background-color: var(--bg-disabled-color);
+  color: var(--inverted-bg-disabled-color);
+  border-color: var(--bg-disabled-color);
+}
+
+/* edit and delete */
+
+.edit,
+.delete {
+  line-height: 0;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+}
+
+/* edit */
+
+.edit {
+  color: var(--primary-color);
+}
+
+.edit.active {
+  color: #0013ff;
+}
+
+.edit:hover {
+  color: #606492;
+}
+
+.edit:focus-visible {
+  color: #30324b;
+  background-color: #a4a4a4;
+}
+
+/* delete */
+
+.delete {
+  color: #ff2f2f;
+}
+
+.delete:hover {
+  color: #ff9b9b;
+}
+
+.delete:focus-visible {
+  color: #ff2f2f;
+  background-color: #a4a4a4;
+}
+
+.edit:disabled,
+.delete:disabled {
+  color: #a4a4a4;
+  border: none;
+  background-color: inherit;
 }

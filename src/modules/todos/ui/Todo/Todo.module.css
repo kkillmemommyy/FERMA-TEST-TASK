@@ -1,0 +1,92 @@
+.todo {
+  padding: 20px;
+  box-shadow: 0 4px 17.8px 0 #0000001a;
+  border-radius: 21px;
+}
+
+.date {
+  margin-bottom: 20px;
+}
+
+.btns {
+  display: flex;
+  gap: 12px;
+  justify-content: end;
+  margin-left: auto;
+}
+
+.text {
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+/* checkbox */
+
+.checkbox {
+  cursor: pointer;
+  padding-left: 50px;
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox__input {
+  position: absolute;
+  appearance: none;
+}
+
+.checkbox__mark {
+  position: absolute;
+  margin-left: -50px;
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: 2px solid #a4a4a4;
+  background-color: transparent;
+}
+
+.checkbox__input:focus-visible + .checkbox__mark {
+  background-color: #d9d9d9;
+  border: 1px solid var(--primary-color);
+}
+
+.checkbox__input:hover + .checkbox__mark {
+  background-color: #d9d9d9;
+}
+
+.checkbox__input:checked + .checkbox__mark {
+  background-color: #6ad400;
+  border-color: #6ad400;
+}
+
+.checkbox__input:disabled + .checkbox__mark {
+  background-color: 1px solid #d9d9d9;
+}
+
+/* end checkbox */
+
+@media (max-width: 768px) {
+  .btns {
+    gap: 20px;
+  }
+
+  .btns svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .checkbox {
+    padding-right: 15px;
+    margin-bottom: 10px;
+  }
+}

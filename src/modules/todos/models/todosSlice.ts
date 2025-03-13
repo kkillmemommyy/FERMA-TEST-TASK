@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AddTaskPayload, InitialState } from './types';
+import { AddTaskPayload, DeleteTaskPayload, InitialState, ToggleTaskStatusPayload, UpdateTaskPayload } from './types';
 
 const initialState: InitialState = {
   tasks: {},
@@ -11,15 +11,30 @@ const todosSlice = createSlice({
   initialState,
   reducers: {
     addTask: (state, { payload: { text } }: PayloadAction<AddTaskPayload>) => {
-      const id = String(Date.now());
+      const createdAt = Date.now();
+      const id = String(createdAt);
       state.tasks[id] = {
-        id: id,
+        id,
         text,
         status: 'IN_WORK',
-        createdAt: id,
-        updatedAt: null,
+        createdAt: createdAt,
+        updatedAt: createdAt,
       };
       state.ids.push(id);
+    },
+    deleteTask: (state, { payload: { id } }: PayloadAction<DeleteTaskPayload>) => {
+      delete state.tasks[id];
+      state.ids = state.ids.filter((currentId) => currentId !== id);
+    },
+    updateTask: ({ tasks }, { payload: { id, text } }: PayloadAction<UpdateTaskPayload>) => {
+      const task = tasks[id];
+      task.updatedAt = Date.now();
+      task.text = text;
+    },
+    toggleTaskStatus: ({ tasks }, { payload: { id } }: PayloadAction<ToggleTaskStatusPayload>) => {
+      const task = tasks[id];
+      task.updatedAt = Date.now();
+      task.status = task.status === 'COMPLETED' ? 'IN_WORK' : 'COMPLETED';
     },
   },
 });

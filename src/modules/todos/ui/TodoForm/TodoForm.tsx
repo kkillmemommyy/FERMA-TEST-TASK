@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 import cls from './TodoForm.module.css';
-import { Cross } from '../Cross';
+import { Cross } from '../../../../shared/ui/Icons/Cross';
 import { useTypedDispatch } from '@/shared/lib/typedReduxHooks';
 import { todosActions } from '../../models/todosSlice';
 import clsx from 'clsx';

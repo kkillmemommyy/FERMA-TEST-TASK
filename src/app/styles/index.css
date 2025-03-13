@@ -23,10 +23,8 @@ input {
   font-size: var(--font-size-medium);
 }
 
-button:disabled {
-  background-color: var(--bg-disabled-color);
-  color: var(--inverted-bg-disabled-color);
-  border-color: var(--bg-disabled-color);
+ul {
+  list-style-type: none;
 }
 
 @media (max-width: 768px) {

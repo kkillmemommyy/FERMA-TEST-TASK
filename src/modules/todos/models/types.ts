@@ -1,11 +1,13 @@
-type Status = 'COMPLETED' | 'IN_WORK';
+export type TodoStatus = 'COMPLETED' | 'IN_WORK';
+
+export type Filter = 'ALL' | 'COMPLETED' | 'IN_WORK';
 
 export interface Task {
   id: string;
   text: string;
-  createdAt: string;
-  updatedAt: string | null;
-  status: Status;
+  createdAt: number;
+  updatedAt: number;
+  status: TodoStatus;
 }
 
 export interface InitialState {
@@ -15,4 +17,17 @@ export interface InitialState {
 
 export interface AddTaskPayload {
   text: string;
+}
+
+export interface DeleteTaskPayload {
+  id: string;
+}
+
+export interface UpdateTaskPayload {
+  id: string;
+  text: string
+}
+
+export interface ToggleTaskStatusPayload {
+  id: string;
 }

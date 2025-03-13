@@ -45,6 +45,12 @@
   transform: none;
 }
 
+.btn:disabled {
+  background-color: var(--bg-disabled-color);
+  color: var(--inverted-bg-disabled-color);
+  border-color: var(--bg-disabled-color);
+}
+
 @media (max-width: 768px) {
   .input {
     padding: 19px 61px 19px 10px;
