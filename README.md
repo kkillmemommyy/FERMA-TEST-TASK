@@ -1,7 +1,7 @@
 # FERMA TEST TASK
 
 **Github Pages:**
-[https://kkillmemommyy.github.io/FERMA-TEST-TASK/](https://kkillmemommyy.github.io/FERMA-TEST-TASK/)
+https://kkillmemommyy.github.io/FERMA-TEST-TASK/
 
 ## Использованные технологии
 - **React**
@@ -13,4 +13,4 @@
 - **Vite**
 
 ## TODO
-- **DND**
+- **DnD**
