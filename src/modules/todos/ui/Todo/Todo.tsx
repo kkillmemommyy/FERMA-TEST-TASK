@@ -57,7 +57,6 @@ export const Todo = memo(({ id }: TodoProps) => {
         />
         <span className={cls.checkbox__mark}></span>
         {isEditing ? (
-          <div className={cls.inputWrap}>
             <input
               onBlur={onBlure}
               className={cls.input}
@@ -71,8 +70,6 @@ export const Todo = memo(({ id }: TodoProps) => {
                 if (e.key === 'Escape') setIsEditing(false);
               }}
             />
-            <span className={cls.InputDynamicUnderline}>{editText}</span>
-          </div>
         ) : (
           <span className={clsx({ [cls.completed]: isCompleted }, cls.text)}>{text}</span>
         )}
