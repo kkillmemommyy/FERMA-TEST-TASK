@@ -20,7 +20,6 @@ h2 {
 }
 
 input {
-  font-family: inherit;
   font-size: var(--font-size-medium);
 }
 

@@ -3,13 +3,8 @@ import cls from './TodoForm.module.css';
 import { Cross } from '../../../../shared/ui/Icons/Cross';
 import { useTypedDispatch } from '@/shared/lib/typedReduxHooks';
 import { todosActions } from '../../models/todosSlice';
-import clsx from 'clsx';
 
-interface TodoFormProps {
-  extraClasses?: string;
-}
-
-export const TodoForm = ({ extraClasses = '' }: TodoFormProps) => {
+export const TodoForm = () => {
   const [inputText, setInputText] = useState<string>('');
   const dispatch = useTypedDispatch();
 
@@ -24,7 +19,7 @@ export const TodoForm = ({ extraClasses = '' }: TodoFormProps) => {
   };
 
   return (
-    <form onSubmit={onSubmit} className={clsx(cls.form, extraClasses)}>
+    <form onSubmit={onSubmit} className={cls.form}>
       <input
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}

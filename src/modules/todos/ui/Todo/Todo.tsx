@@ -57,26 +57,34 @@ export const Todo = memo(({ id }: TodoProps) => {
         />
         <span className={cls.checkbox__mark}></span>
         {isEditing ? (
-            <input
-              onBlur={onBlure}
-              className={cls.input}
-              type='text'
-              contentEditable
-              value={editText}
-              autoFocus
-              onChange={(e) => setEditText(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') handleSave();
-                if (e.key === 'Escape') setIsEditing(false);
-              }}
-            />
+          <input
+            onBlur={onBlure}
+            className={cls.input}
+            type='text'
+            value={editText}
+            autoFocus
+            onChange={(e) => setEditText(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleSave();
+              if (e.key === 'Escape') setIsEditing(false);
+            }}
+          />
         ) : (
           <span className={clsx({ [cls.completed]: isCompleted }, cls.text)}>{text}</span>
         )}
       </label>
       <div className={cls.btns}>
         {isEditing && (
-          <Button ref={saveBtnRef} onClick={handleSave} theme='none' extraClasses={cls.saveBtn}>
+          <Button
+            ref={saveBtnRef}
+            onTouchStart={(e) => {
+              e.preventDefault();
+              handleSave();
+            }}
+            onClick={handleSave}
+            theme='none'
+            extraClasses={cls.saveBtn}
+          >
             Сохранить
           </Button>
         )}

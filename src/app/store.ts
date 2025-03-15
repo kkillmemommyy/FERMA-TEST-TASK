@@ -6,6 +6,8 @@ import { todosReducer, todosSliceName } from '@/modules/todos/models/todosSlice'
 const persistConfig = {
   key: 'root',
   storage,
+  whitelist: [todosSliceName],
+  blacklist: [],
 };
 
 const rootReducer = combineReducers({
