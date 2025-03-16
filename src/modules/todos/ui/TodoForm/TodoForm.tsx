@@ -1,33 +1,36 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import cls from './TodoForm.module.css';
 import { Cross } from '../../../../shared/ui/Icons/Cross';
 import { useTypedDispatch } from '@/shared/lib/typedReduxHooks';
 import { todosActions } from '../../models/todosSlice';
 
 export const TodoForm = () => {
-  const [inputText, setInputText] = useState<string>('');
+  const [inputText, setInputText] = useState('');
   const dispatch = useTypedDispatch();
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (inputText === '') {
-      return;
-    }
 
-    dispatch(todosActions.addTask({ text: inputText }));
+    dispatch(todosActions.addTask({ text: inputText.trim() }));
     setInputText('');
+    inputRef.current?.focus();
   };
+
+  const isSubmitBtnDisabled = inputText.trim() === '';
 
   return (
     <form onSubmit={onSubmit} className={cls.form}>
       <input
+        ref={inputRef}
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
+        autoFocus
         className={cls.input}
         placeholder='Создать задачу'
         type='text'
       />
-      <button disabled={inputText === ''} className={cls.btn} type='submit'>
+      <button disabled={isSubmitBtnDisabled} className={cls.btn} type='submit'>
         <Cross />
       </button>
     </form>
