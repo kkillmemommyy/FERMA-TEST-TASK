@@ -1,10 +1,10 @@
-import { FormEvent, useRef, useState } from 'react';
+import { FormEvent, memo, useRef, useState } from 'react';
 import cls from './TodoForm.module.css';
 import { Cross } from '../../../../shared/ui/Icons/Cross';
 import { useTypedDispatch } from '@/shared/lib/typedReduxHooks';
 import { todosActions } from '../../models/todosSlice';
 
-export const TodoForm = () => {
+export const TodoForm = memo(() => {
   const [inputText, setInputText] = useState('');
   const dispatch = useTypedDispatch();
   const inputRef = useRef<HTMLInputElement>(null)
@@ -35,4 +35,4 @@ export const TodoForm = () => {
       </button>
     </form>
   );
-};
+});
