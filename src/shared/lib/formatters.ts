@@ -1,15 +1,10 @@
 // date: Timestamp
 export const getFormattedDate = (date: string) => {
   const MS_IN_DAY = 86400000;
-
-  const dateObj = new Date(Number(date))
-
+  const dateObj = new Date(Number(date));
   const today = new Date();
-  let dayAgo = Math.floor((today.getTime() - dateObj.getTime()) / MS_IN_DAY);
-  const msRemains = today.getTime() - (dateObj.getTime() + dayAgo * MS_IN_DAY);
-  const dateAgoMsRemains = new Date(today.getTime() - msRemains).getDate();
 
-  dayAgo += today.getDate() !== dateAgoMsRemains ? 1 : 0;
+  const dayAgo = Math.floor((today.setHours(0, 0, 0, 0) - dateObj.setHours(0, 0, 0, 0)) / MS_IN_DAY);
 
   const lastDigit = dayAgo % 10;
   const lastTwoDigits = dayAgo % 100;
